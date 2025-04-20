@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // CORS setup
-const allowedOrigins = ["http://localhost:5174", "http://localhost:5173"];
+const allowedOrigins = ["http://localhost:5174", process.env.FRONTEND_URL];
 
 app.use((req, res, next) => {
   const origin = req.headers.origin;
